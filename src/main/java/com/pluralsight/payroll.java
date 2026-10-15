@@ -20,16 +20,21 @@ public class payroll {
         float payRate = myScanner.nextFloat();
 
         // calculate gross pay
-        double grossPay = hours * payRate;
+        double grossPay, overtime;
+
+        // BONUS: if user is over 40 hrs add a 1.5x payrate for extra hours
+        if(hours > 40){
+            overtime = hours - 40;
+            grossPay = hours * payRate + (overtime * (payRate * 1.5));
+        }else{
+            grossPay = hours * payRate;
+        }
 
         // give user back gross pay
         System.out.printf("Hey, %s! Your gross pay is: $%.2f%n", name, grossPay);
 
         // end of user input
         myScanner.close();
-
-        // BONUS: if user is over 40 hrs add a 1.5x payrate for extra hours
-
     }
 
 
