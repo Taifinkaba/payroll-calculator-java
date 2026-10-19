@@ -19,6 +19,10 @@ public class payroll {
         System.out.println("What is your payrate?");
         float payRate = myScanner.nextFloat();
 
+        userName();
+        userHours();
+        userPayRate();
+
         // calculate gross pay
         double grossPay, overtime;
 
@@ -36,6 +40,42 @@ public class payroll {
         // end of user input
         myScanner.close();
     }
+
+    // for user input
+    public static String userName() {
+        Scanner myScanner = new Scanner(System.in);
+
+        // user input name
+        System.out.println("Enter Name: ");
+        String name = myScanner.nextLine();
+
+        return name;
+    }
+
+    public static double userHours() {
+        Scanner myScanner = new Scanner(System.in);
+
+        // user input hours worked
+        System.out.println("How many hours have you worked?");
+        double hours = myScanner.nextDouble();
+
+        return hours;
+    }
+
+    public static double userPayRate() {
+        Scanner myScanner = new Scanner(System.in);
+
+        // user input pay rate as a float
+        System.out.println("What is your payrate?");
+        float payRate = myScanner.nextFloat();
+
+        return payRate;
+    }
+
+    // for calculating payroll
+//    public static int pay(String[] args) {
+//
+//    }
 
 
 }
